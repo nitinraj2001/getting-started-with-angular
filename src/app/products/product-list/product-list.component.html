@@ -30,7 +30,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let product of products">
+                    <tr *ngFor="let product of filteredProduct">
                         <td><img src="{{product.imageUrl}}" *ngIf="showImage" [title]='product.productName' class="img-responsive" [style.width.px]='imageWidth' [style.margin.px]='imageMargin'></td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode |lowercase | convertToSpaces: '-'}}</td>
@@ -39,6 +39,9 @@
                         <td>{{product.starRating}}</td>
                         
                     </tr>
+                    <div *ngIf='filteredProduct.length==0'>
+                          <p align="center" style="color:red"><i>**No matched product is found please search valid products**</i></p>
+                    </div>
 
                 </tbody>
             </table>
