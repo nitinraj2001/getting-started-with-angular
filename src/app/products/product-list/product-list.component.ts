@@ -15,6 +15,7 @@ export class ProductListComponent implements OnInit {
   showImage: boolean=false;
   private _filterText: string='';
   filteredProduct: Product[];
+  checkFilterItemsStatus: boolean=false;
 
   get filterText(): string{
     return this._filterText;
@@ -23,6 +24,9 @@ export class ProductListComponent implements OnInit {
   set filterText(text: string){
        this._filterText=text;
        this.filteredProduct=this.getProductFilter(text);
+       if(this.filteredProduct.length>0){
+         this.checkFilterItemsStatus=true;
+       }
   }
 
 
@@ -95,6 +99,14 @@ export class ProductListComponent implements OnInit {
   getProductFilter(filterText: string):Product[]{
     const filterBy: string=filterText.toLocaleLowerCase();
     return this.products.filter((product:Product)=>product.productName.toLocaleLowerCase().includes(filterBy));
+  }
+
+  sortBy():void{
+    
+  }
+
+  onRatingClicked(message: string): void{
+    this.pageTitle=this.pageTitle +" "+message;
   }
 
 }
