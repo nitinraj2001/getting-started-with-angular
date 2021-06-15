@@ -7,18 +7,24 @@ import { ProductListComponent } from './products/product-list/product-list.compo
 import { FormsModule } from '@angular/forms';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
 import { StarComponent } from './shared/star/star.component';
+import {HttpClientModule} from '@angular/common/http';
+import { NavBarComponent } from './products/nav-bar/nav-bar.component';
+import { HomeComponent } from './products/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ConvertToSpacesPipe,
-    StarComponent
+    StarComponent,
+    NavBarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
