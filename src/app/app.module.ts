@@ -10,6 +10,7 @@ import { StarComponent } from './shared/star/star.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NavBarComponent } from './products/nav-bar/nav-bar.component';
 import { HomeComponent } from './products/home/home.component';
+import { AboutComponent } from './products/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './products/home/home.component';
     ConvertToSpacesPipe,
     StarComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
